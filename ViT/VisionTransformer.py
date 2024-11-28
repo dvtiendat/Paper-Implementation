@@ -31,6 +31,7 @@ class MSA(nn.Module):
     def forward(self, x):
         x = self.layer_norm(x)
         x, _ = self.multihead_attn(query=x, key=x, value=x, need_weights=False)
+        
         return x
 
 class MlpBlock(nn.Module):
